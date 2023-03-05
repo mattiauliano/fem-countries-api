@@ -92,6 +92,7 @@ body {
 .main__search-bar {
   margin-top: 3rem;
   max-width: 900px;
+  min-width: fit-content;
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
@@ -120,6 +121,7 @@ body {
 .main__filter {
   padding: 1rem 1.5rem;
   width: 50%;
+  min-width: fit-content;
   border: none;
   background-color: var(--primary-color);
   appearance: none;
@@ -130,7 +132,7 @@ body {
 
 .main__cards {
   margin-block: 2.5rem;
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -228,4 +230,67 @@ body {
   gap: 1rem;
   display: flex;
   flex-direction: column;
+}
+
+/* Desktop */
+
+@media (max-width: 375px) {
+  :root {
+    --fs-300: 12px;
+    --fs-500: 14px;
+    --fs-700: 19px;
+  }
+}
+
+@media (min-width: 750px) {
+  .main__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    max-width: 390px;
+  }
+
+  .main__search-field {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .main__search-bar {
+    margin-top: 0;
+  }
+
+  .main__filter {
+    width: fit-content;
+  }
+
+  .card__detailsCard {
+    color: var(--primary-text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .card__detailsCard > div > img {
+    max-width: 800px;
+  }
+
+  .card__detailsCard > div {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .card__detailsCard > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 }
